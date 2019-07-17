@@ -1,0 +1,85 @@
+<!-- use base html tempalte -->
+
+<!-- use base html tempalte -->
+{% extends 'base.html' %}
+{% block content %}
+    <!-- recipe output -->
+    {% for recipe in recipes %}
+        {{ recipe.recipe_name }}
+        {{ recipe.category_name }}
+        {{ recipe.recipe_veg }}
+        {{ recipe.recipe_prep_time }}
+        {{ recipe.recipe_ingr }}
+        {{ recipe.recipe_prep_steps }}
+    {% endfor %}
+
+<div class="container cards">
+    <div class="row">
+        <div class="col s12 m3 l4"> 
+        <div class="card small">
+            <div class="card-image">
+                <img src="https://image.shutterstock.com/image-photo/spaghetti-bolognese-on-wooden-surface-260nw-1410464291.jpg">
+            </div>
+            <div class="card-stacked">
+                <div class="card-content">
+                    <p></p>
+                </div>
+                <div class="card-action">
+                    <a href="#">How to cook...</a>
+                </div>
+            </div>
+        </div>
+        </div>
+        
+        <div class="col s12 m3 l4"> 
+        <div class="card small">
+            <div class="card-image">
+                <img src="https://image.shutterstock.com/image-photo/spaghetti-bolognese-on-wooden-surface-260nw-1410464291.jpg">
+            </div>
+            <div class="card-stacked">
+                <div class="card-content">
+                    <p></p>
+                </div>
+                <div class="card-action">
+                    <a href="#">How to cook...</a>
+                </div>
+            </div>
+        </div>
+        </div>
+        
+        <div class="col s12 m3 l4"> 
+        <div class="card small">
+            <div class="card-image">
+                <img src="https://image.shutterstock.com/image-photo/spaghetti-bolognese-on-wooden-surface-260nw-1410464291.jpg">
+            </div>
+            <div class="card-stacked">
+                <div class="card-content">
+                    <p></p>
+                </div>
+                <div class="card-action">
+                    <a href="#">How to cook...</a>
+                </div>
+            </div>
+        </div>
+        </div>
+        
+        <div class="col s12 m3 l4"> 
+            <div class="card small">
+                <div class="card-image">
+                    <img src="https://image.shutterstock.com/image-photo/spaghetti-bolognese-on-wooden-surface-260nw-1410464291.jpg">
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <p></p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">How to cook...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
