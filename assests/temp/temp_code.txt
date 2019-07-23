@@ -1,0 +1,16 @@
+1. for app.py
+
+#single recipe page  by id - working
+#@app.route('/pull_recipe')
+#def pull_recipe():
+#    return render_template("pull.html", recipes=mongo.db.recipes.find({"_id": ObjectId("5d2f6a971c9d44000027bdd0")}))
+
+#get single recipe page - not working
+#@app.route('/')
+#@app.route('/get_recipe/<recipe_id>')
+#def get_recipe(recipe_id):
+    #single_recipe = mongo.db.recipes.find({"_id": ObjectId(recipe_id)})
+    #get categories and recipe data
+    #all_categories = mongo.db.categories.find()
+    #all_recipes = mongo.db.recipes.find()
+    #return render_template("recipe.html", recipe=single_recipe)

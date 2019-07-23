@@ -1,0 +1,103 @@
+{% extends 'base.html' %} {% block content %}
+
+<h3> Edit recipe</h3>
+
+<div class="row">
+    <form action="{{ url_for('insert_recipe') }}" method="POST" class="col s12">
+
+        <!-- receipe name -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">local_dining</i>
+                <input id="recipe_name" name="recipe_name" type="text">
+                <label for="recipe_name">Recipe Name</label>
+            </div>
+        </div>
+
+        <!-- receipe short description -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">short_text</i>
+                <input id="recipe_sdes" name="recipe_sdes" type="text">
+                <label for="recipe_sdes">Short description visible on recipe Card</label>
+            </div>
+        </div>
+
+        <!-- category selection -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">poll</i>
+                <select id="category" name="category_name">
+                  <option value="" disabled selected>Choose Cuisine</option>
+                    {% for cat in categories %}
+                        {% if cat.category_name == recipe.category %}
+                          <option value="{{ cat.category_name }}" selected>{{ cat.category_name }}</option>
+                        {% else %}
+                            <option value="{{ cat.category_name }}">{{ cat.category_name }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+                <label>Cuisine</label>
+            </div>
+        </div>
+
+
+        <!-- receipe description -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">description</i>
+                <textarea name="recipe_des" id="recipe_des" class="materialize-textarea" data-length="120"> </textarea>
+                <label for="recipe_des">Recipe description</label>
+            </div>
+        </div>
+        <!-- receipe preparation steps -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">room_service</i>
+                <textarea name="receipe_prep_steps" id="receipe_prep_steps" class="materialize-textarea"> </textarea>
+                <label for="receipe_prep_steps">Recipe preparation steps</label>
+            </div>
+        </div>
+        <!-- receipe ingridients -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">kitchen</i>
+                <textarea name="recipe_ingr" id="recipe_ingr" class="materialize-textarea"> </textarea>
+                <label for="recipe_ingr">Ingridients</label>
+            </div>
+        </div>
+        <!-- preparation time selector -->
+        <div class="row">
+            <div class="input-field col s12 m4 l3">
+                <i class="material-icons prefix">access_time</i>
+                <input type="number" name="recipe_prep_time" id="recipe_prep_time" min="5" max="120" step="5" value="30">
+                <label for="recipe_prep_time">Preparation time in minutes:</label>
+            </div>
+        </div>
+
+        <!-- vegeterian switch -->
+        <div class="row">
+            <div class="col s12 m4 l3">
+                <div class="switch">
+                    <i class="material-icons prefix">spa</i>
+                    <label>
+                        Vegetarian
+                  <input id="recipe_veg" name="recipe_veg" type="checkbox">
+                  <span class="lever"></span>
+                </label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- add button -->
+        <div class="row">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Update recipe
+                <i class="material-icons right">add</i>
+            </button>
+        </div>
+
+
+    </form>
+</div>
+
+{% endblock %}
