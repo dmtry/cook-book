@@ -20,7 +20,7 @@ def get_recipes():
 #get single recipe page
 @app.route('/get_recipe/<recipe_id>')
 def get_recipe(recipe_id):
-    return render_template("recipe.html", recipes=mongo.db.recipes.find({"_id": ObjectId(recipe_id)}))
+    return render_template("recipe.html", recipe=mongo.db.recipes.find({"_id": ObjectId(recipe_id)}))
 
     
 #add new recipe page
@@ -39,14 +39,14 @@ def insert_recipe():
 #edit recipe
 #@app.route ('/edit_recipe/<recipe_id>')
 #def edit_recipe(recipe_id):
-    #the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    #the_recipe = mongo.db.recipes.find({"_id": ObjectId(recipe_id)})
     #all_categories = mongo.db.categories.find()
     #return render_template("edit_recipe.html", recipe=the_recipe, categories=all_categories)
 
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
     all_categories = mongo.db.categories.find()
-    return render_template("edit_recipe.html", recipe=mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)}), categories=all_categories)
+    return render_template("edit_recipe.html", recipe=mongo.db.recipes.find({"_id": ObjectId(recipe_id)}), categories=all_categories)
     
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
