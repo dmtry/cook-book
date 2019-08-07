@@ -4,11 +4,8 @@
 {% block content %}
 <!-- recipe output -->
     {% for recipe in recipe %}
-<!-- edit recipe -->
-<div class="cols s3">
-    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id )}}" class="waves-effect waves-light btn btn_small green">Edit recipe</a>
-</div>
-<p> Selected recipe ID = {{ recipe._id }} </p>
+
+<!-- <p> Selected recipe ID = {{ recipe._id }} </p> -->
 
 <table>
           <tr>
@@ -26,6 +23,12 @@
           </tr>
         </tbody>
       </table>
+
+<!-- edit recipe -->
+<div class="cols s3">
+    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id )}}" class="waves-effect waves-light btn btn_small green">Edit recipe</a>
+</div>
+
           {% endfor %}
 
 
