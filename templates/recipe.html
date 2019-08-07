@@ -5,9 +5,9 @@
 <!-- recipe output -->
     {% for recipe in recipes %}
 
+<p> Selected recipe ID = {{ recipe._id }} </p>
 
 <table>
-        <thead>
           <tr>
               <th>{{ recipe.recipe_name }}</th>
               <th>{{ recipe.category_name }}</th>
@@ -27,7 +27,9 @@
 
 <!-- edit recipe -->
 <div class="cols s3">
-    <a href="{{ url_for('edit_recipe', recipe_id=_id )}}" class="waves-effect waves-light btn btn_small red">Edit recipe</a>
+    <a href="{{ url_for('edit_recipe', recipe_id=_id )}}" class="waves-effect waves-light btn btn_small green">Edit recipe</a>
 </div>
+
+
 
 {% endblock %}
