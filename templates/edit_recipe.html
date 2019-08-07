@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% block content %}
-
+{% for recipe in recipe %}
 <h3> Edit recipe</h3>
 
 
@@ -103,5 +103,5 @@
 
     </form>
 </div>
-
+{% endfor %}
 {% endblock %}
